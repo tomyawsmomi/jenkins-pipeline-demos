@@ -45,4 +45,5 @@ pipeline {
         preserveStashes()
         timestamps()
     }
+  }
 }
