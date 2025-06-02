@@ -22,6 +22,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/tomyawsmomi/jenkins-pipeline-demos.git'
                 stash includes: '**/*', name: 'source'
             }
+        }
         stage('Checkov') {
             steps {
                 withCredentials([string(credentialsId: 'PC_USER', variable: 'pc_user'),string(credentialsId: 'PC_PASSWORD', variable: 'pc_password')]) {
@@ -38,12 +39,12 @@ pipeline {
                         }
                     }
                 }
-            }
-        }
-    }
-    options {
-        preserveStashes()
-        timestamps()
+                options {
+                    preserveStashes()
+                    timestamps()
+           }
+         }
+       }
     }
   }
 }
