@@ -22,8 +22,6 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/tomyawsmomi/jenkins-pipeline-demos.git'
                 stash includes: '**/*', name: 'source'
             }
-        }
+           }
          }
        }
-    }
-  }
